@@ -1,0 +1,28 @@
+.form1 {
+  width: 25%;
+}
+  
+.form1__input {
+  background-color: $color-gray-900;
+  border: 0;
+  border-bottom: 2px solid $color-gray-900;
+  color: $color-white;
+
+  display: block;
+  margin: 8px;
+  padding: 16px 32px;
+  position: relative;
+
+  transition-duration: 300ms;
+  width: calc(100% - 16px);
+
+  &:hover {
+    border-bottom: 2px solid $color-white;
+  }
+
+  &:focus {
+    background-color: $color-white;
+    color: $color-black;
+    outline: 0;
+  }
+}
