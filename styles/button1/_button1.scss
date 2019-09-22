@@ -1,0 +1,103 @@
+$color-blue-200: #BEE3F8;
+
+.button1-1 {
+  background-color: $color-white;
+  border: 0;
+  border-radius: 5px;
+  color: $color-black;
+  overflow: hidden;
+  padding: 16px;
+  position: relative;
+  z-index: 1;
+
+  &::before {
+    background-color: $color-blue-200;
+    border-radius: 50%;
+    content: '';
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    transform: scale(0);
+    transition-duration: 0;
+    transition-property: transform;
+    width: 100%;
+    z-index: -1;
+  }
+
+  &:hover,
+  &:focus {
+    &::before {
+      transform: scale(1.1, 2.2);
+      transition-duration: $animation-speed;
+    }
+  }
+}
+
+.button1-2 {
+  background-color: $color-white;
+  border: 0;
+  border-radius: 5px;
+  color: $color-black;
+  overflow: hidden;
+  padding: 16px;
+  position: relative;
+  z-index: 1;
+
+  &::before {
+    background-color: $color-blue-200;
+    border-radius: 50%;
+    content: '';
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    transform: translateX(-50%) scale(0);
+    transition-duration: 0;
+    transition-property: transform;
+    width: 100%;
+    z-index: -1;
+  }
+
+  &:hover,
+  &:focus {
+    &::before {
+      transform: translateX(-50%) scale(2.1, 4.2);
+      transition-duration: $animation-speed;
+    }
+  }
+}
+
+.button1-3 {
+  background-color: $color-white;
+  border: 0;
+  border-radius: 5px;
+  color: $color-black;
+  overflow: hidden;
+  padding: 16px;
+  position: relative;
+  z-index: 1;
+
+  &::before {
+    background-color: $color-blue-200;
+    border-radius: 50%;
+    content: '';
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    transform: translateY(50%) scale(0);
+    transition-duration: 0;
+    transition-property: transform;
+    width: 100%;
+    z-index: -1;
+  }
+
+  &:hover,
+  &:focus {
+    &::before {
+      transform: translateY(50%) scale(1.5, 3);
+      transition-duration: $animation-speed;
+    }
+  }
+}
