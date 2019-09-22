@@ -1,0 +1,47 @@
+$transparency: #00000000;
+$stripe-start: 25%;
+$stripe-end: 60%;
+$stripe-color: #8fc9f040;
+$stripe-angle: 120deg;
+
+$button-background-hover-color: #2194e0;
+$button-foreground-color: #2194e0;
+
+.button2 {
+  background-color: $color-white;
+  border: none;
+  border-radius: 5px;
+  color: $color-black;
+  overflow: hidden;
+  padding: 16px;
+  position: relative;
+
+  transition-duration: $animation-speed;
+  transition-property: background color;
+
+  &::before {
+    background: linear-gradient($stripe-angle, $transparency, $transparency $stripe-start, $stripe-color $stripe-start, $stripe-color $stripe-end, $transparency $stripe-end);
+    content: '';
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    transform: translateX(-100%);
+    transition-duration: 0s;
+    transition-property: transform;
+    width: 100%;
+  }
+
+  &:hover,
+  &:focus {
+    & {
+      background-color: $button-background-hover-color;
+      color: $color-white;
+    }
+
+    &::before {
+      transform: translateX(100%);
+      transition-duration: 1s;
+    }
+  }
+}
