@@ -1,0 +1,79 @@
+$color-midgrey: #888;
+
+.button5-link {
+  cursor: pointer;
+  display: inline-block;
+  padding: 4px 0;
+  position: relative;
+  user-select: none;
+
+  &::before {
+    background-color: $color-midgrey;
+    bottom: 0;
+    content: '';
+    height: 2px;
+    left: 0;
+    position: absolute;
+    width: 100%;
+  }
+
+  &::after {
+    background-color: $color-white;
+    bottom: 0;
+    content: '';
+    height: 2px;
+    left: 0;
+    position: absolute;
+    transform: scale(0, 1);
+    transform-origin: right center;
+    transition-duration: 300ms;
+    transition-property: transform;
+    width: 100%;
+  }
+
+  &:hover,
+  &:focus {
+    &::after {
+      transform: scale(1, 1);
+      transform-origin: left center;
+    }
+  }
+}
+
+.button5-button {
+  background-color: inherit;
+  border: 2px solid $color-white;
+  color: $color-white;
+  cursor: pointer;
+  display: inline-block;
+  margin-left: 8px;
+  padding: 20px;
+  position: relative;
+  transition-duration: 300ms;
+  z-index: 1;
+
+  &::before {
+    background-color: $color-white;
+    content: '';
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    transform: scale(0, 1);
+    transform-origin: right center;
+    transition-duration: 300ms;
+    transition-property: transform;
+    width: 100%;
+    z-index: -1;
+  }
+
+  &:hover,
+  &:focus {
+    color: $color-black;
+
+    &::before {
+      transform: scale(1, 1);
+      transform-origin: left center;
+    }
+  }
+}
