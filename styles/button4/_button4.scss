@@ -1,0 +1,22 @@
+.button4-1 {
+  background-color: $color-white;
+  border: 0;
+  border-radius: 5px;
+  color: $color-black;
+  cursor: pointer;
+  outline: none;
+  padding: 16px;
+  
+  background-image: url(solid_dark_blue.svg), url(solid_dark_blue.svg), url(solid_dark_blue.svg), url(solid_dark_blue.svg);
+  background-position: left bottom, right bottom, right top, left top;
+  background-repeat: no-repeat, no-repeat, no-repeat, no-repeat;
+  background-size: 0% 2px, 2px 0%, 0% 2px, 2px 0%;
+  
+  transition-duration: 1s;
+  transition-property: background-size;
+  
+  &:hover,
+  &:focus {
+    background-size: 100% 2px, 2px 100%, 100% 2px, 2px 100%;
+  }
+}
