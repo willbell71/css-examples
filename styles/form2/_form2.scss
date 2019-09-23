@@ -26,10 +26,7 @@
 
   width: calc(100% - 16px);
 
-  &:hover .form2__field2-input {
-    border-bottom: 2px solid $color-white;
-  }
-
+  &:hover .form2__field2-input,
   &:focus-within .form2__field2-input {
     border-bottom: 2px solid $color-white;
   }
