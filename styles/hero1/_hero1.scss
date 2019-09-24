@@ -1,0 +1,65 @@
+@import url('https://fonts.googleapis.com/css?family=Spicy+Rice');
+
+$heading-color: #ddd;
+$heading-drop-color: #333;
+
+.hero1 {
+  height: 400px;
+  position: relative;
+  width: 100%;
+
+  &::before {
+    background-image: url(hero.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    content: ' ';
+    filter: brightness(.5);
+    height: 100%;
+    position: absolute;
+    width: 100%;
+  }
+}
+  
+.hero1-caption {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  justify-content: center;
+  text-align: center;
+  width: 100%;
+}
+
+.hero1-caption__text {
+  animation-duration: 2s;
+  animation-fill-mode: forwards;
+  animation-name: fadeIn;
+  animation-timing-function: ease-in;
+
+  color: $heading-color;
+  font-family: 'Spicy Rice', cursive;
+
+  opacity: 0;
+
+  text-shadow: 0 0 2px $heading-drop-color;
+}
+
+.hero1-caption__text--title {
+  animation-delay: .5s;
+  font-size: 4rem;
+}
+
+.hero1-caption__text--line {
+  animation-delay: 2s;
+  font-size: 1rem;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
