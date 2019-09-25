@@ -1,0 +1,159 @@
+@import url('https://fonts.googleapis.com/css?family=Archivo');
+
+$nav-background-color: #444;
+$nav-menu-icon-color: #fff;
+
+$menu-background-color: #fff;
+$menu-text-color: #000;
+$menu-divider-color: #000;
+$menu-highlight-background-color: #000;
+$menu-highlight-text-color: #fff;
+
+@function calc-menu-top($start, $gap, $index) {
+  @return $start + ($gap * $index);
+}
+
+.control2__container {
+  height: 400px;
+  overflow: hidden;
+  position: relative;
+}
+
+.control2__nav-bar {
+  background-color: $nav-background-color;
+  height: 48px;
+}
+
+.control2__nav-bar-menu-icon {
+  cursor: pointer;
+  height: 42px;
+  margin-left: 16px;
+  position: relative;
+  top: 3px;
+  width: 34px;
+
+  span {
+    @each $index in 1, 2, 3 {
+      &:nth-child(#{$index}) {
+        background-color: $nav-menu-icon-color;
+        border-radius: 5px;
+        height: 6px;
+        position: absolute;
+        top: calc-menu-top(-6px, 12px, $index);
+        transform-origin: left center;
+        width: 100%;
+      }
+    }
+  }
+
+  &-anim {
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+  }
+
+  &--open1 {
+    animation-name: control2__nav-bar-rotateDown;
+  }
+
+  &--open2 {
+    animation-name: control2__nav-bar-fadeOut;
+  }
+
+  &--open3 {
+    animation-name: control2__nav-bar-rotateUp;
+  }
+
+  &--close1 {
+    animation-name: control2__nav-bar-rotateDownBack;
+  }
+
+  &--close2 {
+    animation-name: control2__nav-bar-fadeIn;
+  }
+
+  &--close3 {
+    animation-name: control2__nav-bar-rotateUpBack;
+  }
+}
+
+@keyframes control2__nav-bar-fadeOut {
+  0% { opacity: 1; }
+  100% { opacity: 0; }
+}
+
+@keyframes control2__nav-bar-fadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+@keyframes control2__nav-bar-rotateDown {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(45deg); }
+}
+
+@keyframes control2__nav-bar-rotateDownBack {
+  0% { transform: rotate(45deg); }
+  100% { transform: rotate(0deg); }
+}
+
+@keyframes control2__nav-bar-rotateUp {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(-45deg); }
+}
+
+@keyframes control2__nav-bar-rotateUpBack {
+  0% { transform: rotate(-45deg); }
+  100% { transform: rotate(0deg); }
+}
+
+.control2__dummy-container {
+  margin: 32px auto 0;
+  width: 80%;
+}
+
+.control2__menu {
+  background-color: $menu-background-color;
+  color: $menu-text-color;
+  height: 100%;
+  position: absolute;
+  transition-duration: 1s;
+  transform: translateX(-250px);
+  width: 250px;
+  visibility: hidden;
+}
+
+.control2__menu--visible {
+  transform: translateX(0px);
+  visibility: visible;
+}
+
+.control2__menu-list {
+  list-style: none;
+}
+
+.control2__menu-list-item {
+  background-color: $menu-background-color;
+  border-bottom: $menu-divider-color 1px solid;
+  color: $menu-text-color;  
+  display: inline-block;
+  font-family: 'Archivo', sans-serif;
+  font-size: 1.5rem;
+  font-weight: 900;
+  padding: 20px;
+  transition-duration: 300ms;
+  user-select: none;
+  width: 100%;
+
+  &:hover,
+  &:focus {
+    background-color: $menu-highlight-background-color;
+    color: $menu-highlight-text-color;
+  }
+}
+
+.control2__menu-list-icon {
+  font-size: 1.5rem;
+  margin-right: 20px;
+  text-align: center;
+  width: 64px;
+}

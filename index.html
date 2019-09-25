@@ -47,11 +47,57 @@
         <section>
             <h2 class="sub-header">Controls</h2>
             <article class="container">
-                <h3 class="sub-sub-header">Control 1</h3>
+                <h3 class="sub-sub-header">Control 1 - Search</h3>
                 <div class="control1__search">
                     <input class="control1__search-input" type="text" placeholder="Search"><!--
                  --><div class="control1__search-button"><div><i class="fas fa-search"></i></div></div>
                 </div>
+            </article>
+            <article class="container">
+                <h3 class="sub-sub-header">Control 2 - Simple Hamburger Menu</h3>
+                <div class="control2__container">
+                    <header class="control2__nav-bar">
+                        <div tabindex="0" class="control2__nav-bar-menu-icon">
+                            <span class="control2__nav-bar-menu-icon-anim"></span>
+                            <span class="control2__nav-bar-menu-icon-anim"></span>
+                            <span class="control2__nav-bar-menu-icon-anim"></span>
+                        </div>
+                    </header>
+                    <nav class="control2__menu">
+                        <ul class="control2__menu-list">
+                            <li><a class="control2__menu-list-item" href="#"><i class="control2__menu-list-icon fas fa-atlas"></i>Home</a></li>
+                            <li><a class="control2__menu-list-item" href="#"><i class="control2__menu-list-icon fas fa-archive"></i>Collection</a></li>
+                            <li><a class="control2__menu-list-item" href="#"><i class="control2__menu-list-icon fas fa-bus"></i>Explore</a></li>
+                            <li><a class="control2__menu-list-item" href="#"><i class="control2__menu-list-icon fas fa-atom"></i>About Us</a></li>
+                            <li><a class="control2__menu-list-item" href="#"><i class="control2__menu-list-icon fas fa-broadcast-tower"></i>Contact</a></li>
+                        </ul>
+                    </nav>
+                    <section class="control2__dummy-container">
+                        <p>Page</p>
+                        <p>Some content ...</p>
+                    </section>                      
+                </div>
+                <script>
+                    const toggle = () => {
+                        const menuButton = document.querySelector('.control2__nav-bar-menu-icon');
+                        const menu = document.querySelector('.control2__menu');
+
+                        menu.classList.toggle('control2__menu--visible');
+                        // play icon anims
+                        const vis = menu.classList.contains('control2__menu--visible');
+                        [0, 1, 2].forEach(index => {
+                            menuButton.children[index].classList.add(`control2__nav-bar-menu-icon--${vis ? 'open' : 'close'}${index + 1}`);
+                            menuButton.children[index].classList.remove(`control2__nav-bar-menu-icon--${vis ? 'close' : 'open'}${index + 1}`);
+                        });
+                    };
+
+                    document.querySelector('.control2__nav-bar-menu-icon').addEventListener('click', toggle);
+                    document.querySelector('.control2__nav-bar-menu-icon').addEventListener('keydown', function(event) {
+                        if ('Enter' === event.key || ' ' === event.key) {
+                            toggle();
+                        }
+                    });
+                </script>
             </article>
         </section>
 
