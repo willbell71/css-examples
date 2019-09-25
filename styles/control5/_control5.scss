@@ -1,0 +1,37 @@
+.control5 {
+  display: flex;
+}
+
+.control5__dot {
+  animation-duration: 1s;
+  animation-iteration-count: infinite;
+  animation-name: control5-anim;
+  animation-timing-function: linear;
+
+  background-color: #fff;
+  border-radius: 50%;
+  height: 20px;
+  margin: 0 8px;
+  width: 20px;    
+}
+
+.control5__dot--1 {
+  animation-delay: 0ms;
+}
+
+.control5__dot--2 {
+  animation-delay: 250ms;
+}
+
+.control5__dot--3 {
+  animation-delay: 500ms;
+}
+
+.control5__dot--4 {
+  animation-delay: 750ms;
+}
+
+@keyframes control5-anim {
+  0% { opacity: 1; }
+  25% { opacity: 0; }
+}
