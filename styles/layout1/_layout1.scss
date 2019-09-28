@@ -1,0 +1,22 @@
+$color-red-600: #E53E3E;
+
+.layout1 {
+  width: 100px;
+
+  &::before {
+    background-color: $color-red-600;
+    content: ' ';
+    display: block;
+    height: 8px;
+    margin-bottom: 8px;
+    width: 100%;
+  }
+
+  &::after {
+    background-color: $color-red-600;
+    content: ' ';
+    display: block;
+    height: 8px;
+    width: 100%;
+  }
+}
