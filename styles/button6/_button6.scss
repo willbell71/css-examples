@@ -1,0 +1,55 @@
+$color-blue-200: #BEE3F8;
+$color-white: #fff;
+$color-black: #000;
+
+$animation-time: 1s;
+
+.button6-1 {
+  background-color: $color-white;
+  border-radius: 15% / 50%;
+  color: $color-black;
+  cursor: pointer;
+  padding: 16px 64px;
+  transition-duration: $animation-time;
+
+  &:hover,
+  &:focus {
+    background-color: $color-blue-200;
+  }
+}
+
+.button6-2 {
+  background-color: inherit;
+  background-image: url('styles/button6/background.svg');
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  color: $color-white;
+  cursor: pointer;
+  padding: 16px 64px;
+  position: relative;
+  transition-duration: $animation-time;
+  z-index: 1;
+
+  &::before {
+    background-image: url('styles/button6/background-hover.svg');
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    content: ' ';
+    height: 100%;
+    position: absolute;
+    left: 0;
+    opacity: 0;
+    top: 0;
+    transition-duration: $animation-time;
+    width: 100%;
+    z-index: -1;
+  }
+
+  &:hover {
+    color: $color-black;
+
+    &::before {
+      opacity: 1;
+    }
+  }
+}
