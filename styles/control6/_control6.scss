@@ -1,0 +1,40 @@
+$color-black: #000;
+$color-white: #fff;
+
+.control6 {
+    display: flex;
+    width: 100%;
+}
+
+.control6__control {
+    background-color: $color-white;
+    box-shadow: 0 0 5px $color-black;
+    color: $color-black;
+    padding: 32px;
+    transition-duration: 300ms;
+    user-select: none;
+    width: 50%;
+
+    &:focus,
+    &:hover {
+        transform: scale(1.1);
+        z-index: 1;
+    }
+}
+
+.control6__control--prev {
+    display: flex;
+    flex-direction: column;
+}
+
+.control6__control--next {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.control6__spacer {
+    background-color: $color-black;
+    height: 100%;
+    width: 1px;
+}
