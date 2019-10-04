@@ -10,6 +10,9 @@ $color-white: #fff;
     background-color: $color-white;
     box-shadow: 0 0 5px $color-black;
     color: $color-black;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
     padding: 32px;
     transition-duration: 300ms;
     user-select: none;
@@ -23,13 +26,9 @@ $color-white: #fff;
 }
 
 .control6__control--prev {
-    display: flex;
-    flex-direction: column;
 }
 
 .control6__control--next {
-    display: flex;
-    flex-direction: column;
     align-items: flex-end;
 }
 
