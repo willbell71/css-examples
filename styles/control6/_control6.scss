@@ -6,13 +6,12 @@ $color-white: #fff;
     width: 100%;
 }
 
-.control6__control {
+.control6__button {
     background-color: $color-white;
     box-shadow: 0 0 5px $color-black;
     color: $color-black;
     cursor: pointer;
-    display: flex;
-    flex-direction: column;
+    display: block;
     padding: 32px;
     transition-duration: 300ms;
     user-select: none;
@@ -25,10 +24,16 @@ $color-white: #fff;
     }
 }
 
-.control6__control--prev {
+.control6__button-content {
+    display: flex;
+    flex-direction: column;
 }
 
-.control6__control--next {
+.control6__button-content--prev {
+    align-items: flex-start;
+}
+
+.control6__button-content--next {
     align-items: flex-end;
 }
 
